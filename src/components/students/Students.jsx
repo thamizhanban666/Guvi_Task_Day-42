@@ -4,8 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import Row_students from './Row_students';
 
-const userContext = useContext(myContext) 
-
+let userContext;
 async function fetch() {
     try {
       let datas = await axios.get("https://day42-nodejs.herokuapp.com/students")
@@ -14,9 +13,10 @@ async function fetch() {
     } catch (error) {
       console.log(error);
     }
-}
-
-function Students() {
+  }
+  
+  function Students() {
+  userContext = useContext(myContext) 
 
     useEffect(() => {
         fetch();

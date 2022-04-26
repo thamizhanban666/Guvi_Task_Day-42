@@ -42,13 +42,12 @@ function Row_students(props) {
               let index = userContext.students.findIndex((obj) => obj._id == student._id);
               userContext.students.splice(index, 1);
               userContext.setStudents([...userContext.students]);
-              fetch();
+              // fetch();
               swal(`Student ${student.name} has been deleted!`, {
                 icon: "success",
                 buttons:{ confirm:{className:"btn btn-primary"}}
               })
             } catch (error) {
-              console.log(error);
               swal(`Student ${student.name} has not been deleted due to some technical issues`,'Please try after some time', {
                 icon: "info",
                 buttons:{ confirm:{className:"btn btn-primary"}}

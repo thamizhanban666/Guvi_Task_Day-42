@@ -71,16 +71,16 @@ function EditStudent() {
                     if (willEdit) {
           
                         try {
-                              await axios.put(`https://day42-nodejs.herokuapp.com/${params.id}`, values)
+                              await axios.put(`https://day42-nodejs.herokuapp.com/students/${params.id}`, values)
                               // let index = userContext.students.findIndex((obj) => obj.id == params.id);
                               // userContext.students.splice(index, 1, values)
                               // userContext.setStudents([...userContext.students])
                               // formik.resetForm();
                               // navigate("/students")  
-                              swal(`This student has been edited`, {
-                                   icon: "success",
-                                   buttons:{ confirm:{className:"btn btn-primary"}}
-                              })
+                              // swal(`This student has been edited`, {
+                              //      icon: "success",
+                              //      buttons:{ confirm:{className:"btn btn-primary"}}
+                              // })
                         }  catch (error) {
                               console.log(error);
                               navigate("/students")   
