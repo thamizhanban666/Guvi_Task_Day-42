@@ -4,18 +4,21 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import Row_students from './Row_students';
 
+const userContext = useContext(myContext) 
+
+async function fetch() {
+    try {
+      let datas = await axios.get("https://day42-nodejs.herokuapp.com/students")
+      userContext.setStudents(datas.data)
+      
+    } catch (error) {
+      console.log(error);
+    }
+}
+
 function Students() {
-  const userContext = useContext(myContext) 
+
     useEffect(() => {
-       async function fetch() {
-            try {
-              let datas = await axios.get("https://day42-nodejs.herokuapp.com/students")
-              userContext.setStudents(datas.data)
-             
-            } catch (error) {
-              console.log(error);
-            }
-        }
         fetch();
   },[])
 
@@ -59,3 +62,4 @@ function Students() {
 }
 
 export default Students
+export {fetch}

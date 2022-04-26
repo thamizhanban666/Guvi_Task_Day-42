@@ -6,6 +6,7 @@ import viewIcon from './svgIcons/view.svg';
 import editIcon from './svgIcons/edit.svg';
 import deleteIcon from './svgIcons/delete.svg';
 import { Link } from 'react-router-dom';
+import { fetch } from './Students';
 
 function Row_students(props) {
        const userContext = useContext(myContext);
@@ -41,6 +42,7 @@ function Row_students(props) {
               let index = userContext.students.findIndex((obj) => obj._id == student._id);
               userContext.students.splice(index, 1);
               userContext.setStudents([...userContext.students]);
+              fetch();
               swal(`Student ${student.name} has been deleted!`, {
                 icon: "success",
                 buttons:{ confirm:{className:"btn btn-primary"}}
