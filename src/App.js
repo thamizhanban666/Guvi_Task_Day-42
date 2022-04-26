@@ -19,10 +19,10 @@ function App() {
         <div className="d-flex">
           <Sidebar className=""/>
           <Routes >
-            <Route path="students" element={<Students />}/>
-            <Route path="add-student" element={<AddStudent />}/>
-            <Route path="edit-student/:id" element={<EditStudent />}/>
-            <Route path="view-student/:id" element={<ViewStudent />}/>
+            <Route path="/students" element={<Students />}/>
+            <Route path="/add-student" element={<AddStudent />}/>
+            <Route path="/edit-student/:id" element={<EditStudent />}/>
+            <Route path="/view-student/:id" element={<ViewStudent />}/>
             {/* <Route path="mentors" element={<Mentors />} /> */}
           </Routes>
         </div>

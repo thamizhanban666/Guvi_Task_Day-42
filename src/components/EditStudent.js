@@ -12,7 +12,7 @@ function EditStudent() {
    useEffect(() => {
          let fetch = async () => {
             try {
-                  let fetchStudent = await axios.get(`https://localhost:3001/students/${params.id}`);
+                  let fetchStudent = await axios.get(`https://day42-nodejs.herokuapp.com/students/${params.id}`);
                   formik.setValues(fetchStudent.data)
             } catch (error) {
                   console.log(error);
@@ -71,7 +71,7 @@ function EditStudent() {
                     if (willEdit) {
           
                         try {
-                              await axios.put(`https://localhost:3001/students/${params.id}`, values)
+                              await axios.put(`https://day42-nodejs.herokuapp.com/${params.id}`, values)
                               // let index = userContext.students.findIndex((obj) => obj.id == params.id);
                               // userContext.students.splice(index, 1, values)
                               // userContext.setStudents([...userContext.students])

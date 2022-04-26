@@ -37,7 +37,7 @@ function Row_students(props) {
           if (willDelete) {
             console.log(student._id);
             try {
-              await axios.delete(`https://localhost:3001/students/${student._id}`)
+              await axios.delete(`https://day42-nodejs.herokuapp.com/students/${student._id}`)
               // let index = userContext.students.findIndex((obj) => obj._id == student._id);
               // userContext.students.splice(index, 1);
               // userContext.setStudents([...userContext.students]);

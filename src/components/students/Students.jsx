@@ -9,7 +9,7 @@ function Students() {
     useEffect(() => {
        async function fetch() {
             try {
-              let datas = await axios.get("http://localhost:3001/students")
+              let datas = await axios.get("https://day42-nodejs.herokuapp.com/students")
               userContext.setStudents(datas.data)
              
             } catch (error) {

@@ -31,7 +31,7 @@ function AddStudent() {
          },
          onSubmit: async (values) => {               
             try {
-               await axios.post("https://localhost:3001/students", values);
+               await axios.post("https://day42-nodejs.herokuapp.com/students", values);
                userContext.setStudents([...userContext.students, values])
                formik.resetForm();
                navigate("/students");

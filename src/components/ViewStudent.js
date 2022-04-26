@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import myContext from './userContext';
 
@@ -9,15 +9,18 @@ function ViewStudent() {
    let params = useParams();
    let [stud,setStud] = useState({})
    // let index = userContext.students.findIndex((e)=> e._id == params.id)
-   let fetch = async () => {
-      try {
-         let student = await axios.get(`http://localhost:3001/students/${params.id}`)
-         setStud(student.data)
-      } catch (error) {
-         console.log(error);    
-      }  
-   }
-   fetch();
+   useEffect(() => {
+      let fetch = async () => {
+         try {
+            let student = await axios.get(`https://day42-nodejs.herokuapp.com/students/${params.id}`)
+            setStud(student.data)
+         } catch (error) {
+            console.log(error);    
+         }  
+      }
+      fetch();   
+   },[])
+   
    return (
       <div className='m-2'>
          <h1 className='text-secondary'>Details</h1><br/>
